@@ -24,6 +24,23 @@ public class NumberSequence {
         }
     }
 
+    public List<Integer> closeToAverage(int value) {
+        List <Integer> listCloseToAverage = new ArrayList<>();
+        double average;
+        int sum = 0;
+        for (int num : numberList) {
+            sum += num;
+        }
+        average = (double) sum / numberList.size();
+        for (int num : numberList) {
+            if (Math.abs(num - average) < value ) {
+                listCloseToAverage.add(num);
+            }
+        }
+        System.out.println(average);
+        return listCloseToAverage;
+    }
+
     @Override
     public String toString() {
         return "NumberSequence{" +

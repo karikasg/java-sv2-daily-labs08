@@ -9,5 +9,7 @@ public class NumberSequenceMain {
 
         NumberSequence numberSequence2 = new NumberSequence(Arrays.asList(4, 6, 2, 7, 5, 3, 12, 9, 20));
         System.out.println(numberSequence2);
+
+        System.out.println(numberSequence.closeToAverage(1));
     }
 }
