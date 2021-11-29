@@ -20,25 +20,29 @@ public class NumberSequence {
     public NumberSequence(int piece, int min, int max) {
         Random random = new Random();
         for (int i = 0; i < piece; i++) {
-            numberList.add(random.nextInt(max - min+1) + min);
+            numberList.add(random.nextInt(min, max+1));
         }
     }
 
     public List<Integer> closeToAverage(int value) {
         List <Integer> listCloseToAverage = new ArrayList<>();
-        double average;
-        int sum = 0;
+        double avg = average();
+
         for (int num : numberList) {
-            sum += num;
-        }
-        average = (double) sum / numberList.size();
-        for (int num : numberList) {
-            if (Math.abs(num - average) < value ) {
+            if (Math.abs(num - avg) <= value ) {
                 listCloseToAverage.add(num);
             }
         }
-        System.out.println(average);
+        System.out.println(avg);
         return listCloseToAverage;
+    }
+
+    public double average() {
+        double sum = 0;
+        for (int num : numberList) {
+            sum += num;
+        }
+        return sum / numberList.size();
     }
 
     @Override
