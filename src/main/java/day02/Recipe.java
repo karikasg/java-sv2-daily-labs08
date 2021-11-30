@@ -41,4 +41,16 @@ public class Recipe {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getIngredients() {
+        return ingredients;
+    }
+
+    public String getDescription() {
+        return description;
+    }
 }
