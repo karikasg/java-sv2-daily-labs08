@@ -1,3 +1,5 @@
+package day01;
+
 import day01.NumberSequence;
 
 import java.util.Arrays;
